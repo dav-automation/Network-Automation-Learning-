@@ -19,13 +19,11 @@ for line in show_lldp.splitlines():
         fields = line.split(':')
         sys_name = fields[1]
         res1 = True
-
     elif "Port id" in line:
         fields = line.split(':')
         port_id = fields[1]
         res2 = True
-    
-    print("System Name and Port ID are: {} and {}".format(sys_name, port_id))
+    print(f"System Name and Port ID are : {sys_name} and {port_id}")
     if res1 and res2:
         print("Exiting...")
         break
