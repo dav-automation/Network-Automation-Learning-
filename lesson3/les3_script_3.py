@@ -14,9 +14,7 @@ with open("show_lldp_neighbors_detail.txt") as f:
 (res1, res2) = (False, False)
 
 for line in show_lldp.splitlines():
-    if line.startswith('----'):
-        continue
-    elif "System Name" in line:
+    if "System Name" in line:
         fields = line.split(':')
         sys_name = fields[1]
         res1  = True
