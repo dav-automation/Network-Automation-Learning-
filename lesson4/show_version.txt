@@ -38,6 +38,8 @@ Processor board ID FTX0000038X
 126000K bytes of ATA CompactFlash (Read/Write)
 
 
+
+
 License Info:
 
 License UDI:
