@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This is my won example. Create a script that reads show version document , determine if it is an 
+This is my own example. Create a script that reads show version document , determine if it is an 
 IOS-XR, IOS-XE or NX-OS firmware show version document. And determine the firmware / OS version.
 For this example, use show_version1.txt, show_version2.txt and show_version3.txt 
 """
