@@ -18,7 +18,6 @@ def output_printer(output):
     print('-' * 80)
     print()
 
-
 try:
     host = raw_input('Enter host to connect to: ')
 except NameError:
@@ -28,12 +27,14 @@ device = {
     'host': host,
     'username': 'cisco',
     'password': password,
-    'device_type': 'cisco_ios'
+    'device_type': 'cisco_ios',
+    'secret': password
 }
 
 net_connect = Netmiko(**device)
 
 # use send_config_set() to make config change
+net_connect.enable()
 config = ['logging console', 'logging buffer 15000']
 output = net_connect.send_config_set(config)
 output_printer(output)
