@@ -34,7 +34,10 @@ device = {
 net_connect = Netmiko(**device)
 
 # use send_config_set() to make config change
-net_connect.enable()
+prompt = net_connect.find_prompt()
+if '>' in prompt:
+    net_connect.enable()
+
 config = ['logging console', 'logging buffer 15000']
 output = net_connect.send_config_set(config)
 output_printer(output)
@@ -50,3 +53,5 @@ if '8000' in output:
 else:
     message += "Logging buffer size is not correct!"
 output_printer(message)
+
+net_connect.disconnect()
